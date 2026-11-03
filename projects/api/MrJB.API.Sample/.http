@@ -1,0 +1,11 @@
+@MrJB.API.Sample_HostAddress = http://localhost:5209
+
+GET {{MrJB.API.Sample_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{MrJB.API.Sample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

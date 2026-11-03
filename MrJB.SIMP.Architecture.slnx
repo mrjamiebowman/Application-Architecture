@@ -1,2 +1,18 @@
 <Solution>
+  <Folder Name="/.Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/projects/" />
+  <Folder Name="/projects/api/">
+    <Project Path="projects/api/MrJB.API.Sample/MrJB.API.Sample.csproj" Id="0a01bdc7-a061-4bab-83f0-5e3f9f523c36" />
+  </Folder>
+  <Folder Name="/projects/api/libs/">
+    <Project Path="projects/api/MrJB.Sample.Application/MrJB.Sample.Application.csproj" Id="7335954f-d73f-4f90-bd72-f1270a6d4157" />
+    <Project Path="projects/api/MrJB.Sample.Data/MrJB.Sample.Data.csproj" Id="80cb33db-5a0f-46b2-b282-1a8daa2a292a" />
+    <Project Path="projects/api/MrJB.Sample.Domain/MrJB.Sample.Domain.csproj" Id="29d89260-994b-4c22-8714-5c0dc8fed34c" />
+  </Folder>
+  <Folder Name="/projects/messaging/" />
+  <Folder Name="/projects/messaging/libs/" />
+  <Folder Name="/projects/nuget/" />
 </Solution>
