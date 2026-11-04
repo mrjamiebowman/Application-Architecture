@@ -1,4 +1,5 @@
 using MrJB.API.Sample;
+using MrJB.Sample.Domain.Configuration;
 using TerribleSettingsAuditor;
 
 const string ProjectName = "MrJB.API.Sample";
@@ -30,6 +31,9 @@ builder.Configuration.AddJsonOverrides(builder.Environment);
 /************************************/
 /*              services            */
 /************************************/
+
+// configuration
+builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection(ApplicationConfiguration.Position));
 
 builder.Services.AddControllers();
 
