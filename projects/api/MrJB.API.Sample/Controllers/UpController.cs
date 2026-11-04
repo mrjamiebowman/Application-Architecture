@@ -16,16 +16,16 @@ namespace MrJB.API.Sample.Controllers;
 public class UpController(ILogger<UpController> logger) : ControllerBase
 {
     /// <summary>
-    /// Availability check: GET/HEAD /up/{key}.
+    /// Availability check: GET/HEAD /up?key={key}.
     /// </summary>
-    [HttpGet("{key}")]
-    [HttpHead("{key}")]
+    [HttpGet]
+    [HttpHead]
     public IActionResult Get() => Content("UP", "text/plain");
 
     /// <summary>
-    /// Writes one log entry at every level to validate logging end to end: GET /up/log/{key}.
+    /// Writes one log entry at every level to validate logging end to end: GET /up/log?key={key}.
     /// </summary>
-    [HttpGet("log/{key}")]
+    [HttpGet("log")]
     public IActionResult Log()
     {
         // search the log store for this id to find exactly this run

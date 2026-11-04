@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 namespace MrJB.API.Sample.Filters;
 
 /// <summary>
-/// Requires the <c>{key}</c> route value to match the value of the configuration setting at <see cref="ConfigurationKey"/>.
+/// Requires the <c>?key=</c> query string value to match the value of the configuration setting at <see cref="ConfigurationKey"/>.
 /// Returns 404 when the key is missing, wrong, or the setting has no value, so the endpoint appears not to exist.
 /// </summary>
 /// <example>
@@ -19,7 +19,7 @@ namespace MrJB.API.Sample.Filters;
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public sealed class RequireKeyAttribute(string configurationKey) : Attribute, IAuthorizationFilter
 {
-    public const string RouteKey = "key";
+    public const string QueryKey = "key";
 
     /// <summary>The configuration path that holds the expected key, e.g. "Application:UpKey".</summary>
     public string ConfigurationKey { get; } = !string.IsNullOrWhiteSpace(configurationKey)
@@ -32,7 +32,9 @@ public sealed class RequireKeyAttribute(string configurationKey) : Attribute, IA
         var expected = context.HttpContext.RequestServices
             .GetRequiredService<IConfiguration>()[ConfigurationKey];
 
-        var supplied = context.RouteData.Values[RouteKey] as string;
+        // exactly one ?key= value; repeated keys (?key=a&key=b) are rejected
+        var values = context.HttpContext.Request.Query[QueryKey];
+        var supplied = values.Count == 1 ? values[0] : null;
 
         if (!IsMatch(expected, supplied))
         {
