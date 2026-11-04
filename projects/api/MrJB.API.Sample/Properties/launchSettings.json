@@ -1,21 +1,102 @@
 {
   "profiles": {
-    "http": {
+    "DEV": {
       "commandName": "Project",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5209"
-    },
-    "https": {
-      "commandName": "Project",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "DEV"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7137;http://localhost:5209"
     },
+    "TEST": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "TEST"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "QA": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "QA"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "UAT": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "UAT"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "PROD": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "PROD"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+
+    "DEV (tsa --screen)": {
+      "commandName": "Project",
+      "commandLineArgs": "tsa --screen",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "DEV"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "TEST (tsa --screen)": {
+      "commandName": "Project",
+      "commandLineArgs": "tsa --screen",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "TEST"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "QA (tsa --screen)": {
+      "commandName": "Project",
+      "commandLineArgs": "tsa --screen",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "QA"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "UAT (tsa --screen)": {
+      "commandName": "Project",
+      "commandLineArgs": "tsa --screen",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "UAT"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+    "PROD (tsa --screen)": {
+      "commandName": "Project",
+      "commandLineArgs": "tsa --screen",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "APP_CONFIG_PREFIX": "PROD"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7137;http://localhost:5209"
+    },
+
     "Container (Dockerfile)": {
       "commandName": "Docker",
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",

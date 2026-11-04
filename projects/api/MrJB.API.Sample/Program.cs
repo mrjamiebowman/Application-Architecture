@@ -1,3 +1,4 @@
+using MrJB.API.Sample;
 using TerribleSettingsAuditor;
 
 const string ProjectName = "MrJB.API.Sample";
@@ -11,14 +12,29 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions {
 /*          configuration           */
 /************************************/
 
+builder.Configuration.SetBasePath(AppContext.BaseDirectory)
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    //.AddUserSecrets()
+    .AddEnvironmentVariables();
 
-// Add services to the container.
+// azure app config
+
+// json overrides
+builder.Configuration.AddJsonOverrides(builder.Environment);
+
+/************************************/
+/*            start-up              */
+/************************************/
+
+/************************************/
+/*              services            */
+/************************************/
 
 builder.Services.AddControllers();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
 
 /************************************/
 /*             tsa                  */
@@ -45,4 +61,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.Run();
+try
+{
+    app.Run();
+} catch (Exception)
+{
+    throw;
+}
+

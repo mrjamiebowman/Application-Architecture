@@ -3,6 +3,9 @@
     <File Path=".gitignore" />
     <File Path="README.md" />
   </Folder>
+  <Folder Name="/aspire/">
+    <Project Path="aspire/MrJB.Simp.AppHost/MrJB.Simp.AppHost.csproj" Id="2f1a0809-51d3-453b-b20a-ffd3fba39940" />
+  </Folder>
   <Folder Name="/projects/" />
   <Folder Name="/projects/api/">
     <Project Path="projects/api/MrJB.API.Sample/MrJB.API.Sample.csproj" Id="0a01bdc7-a061-4bab-83f0-5e3f9f523c36" />
@@ -14,5 +17,7 @@
   </Folder>
   <Folder Name="/projects/messaging/" />
   <Folder Name="/projects/messaging/libs/" />
-  <Folder Name="/projects/nuget/" />
+  <Folder Name="/projects/nuget/">
+    <Project Path="projects/nuget/src/MrJB.Packages.Abstractions/MrJB.Packages.Abstractions.csproj" Id="48fb3aa7-5277-4c55-9f9e-32463bfe609c" />
+  </Folder>
 </Solution>
