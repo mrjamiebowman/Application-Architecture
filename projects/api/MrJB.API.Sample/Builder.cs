@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+using MrJB.Packages.Abstractions.Configuration;
 
 namespace MrJB.API.Sample;
 
@@ -65,7 +66,9 @@ public static class Builder
         builder.Configuration.AddAzureAppConfiguration(options =>
         {
             options.Connect(connectionString)
-                   .Select(KeyFilter.Any, LabelFilter.Null);
+                   .Select(KeyFilter.Any, LabelFilter.Null)
+                   .Select(KeyFilter.Any, AzureAppConfigKeyFilters.UpKey)
+            ;
 
             if (!string.IsNullOrWhiteSpace(labelFilter))
             {

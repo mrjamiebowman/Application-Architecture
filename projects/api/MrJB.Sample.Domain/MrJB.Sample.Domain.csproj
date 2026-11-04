@@ -10,4 +10,8 @@
     <PackageReference Include="TerribleSettingsAuditor.Abstractions" Version="1.0.16" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\nuget\src\MrJB.Packages.Abstractions\MrJB.Packages.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
