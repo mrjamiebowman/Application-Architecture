@@ -1,9 +1,13 @@
 # base
 FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS base
 
-# install packages as root, then drop to the non-root app user
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# upgrade all OS packages to pick up security patches, install packages as root, then drop to the non-root app user
+RUN apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get upgrade -y --no-install-recommends \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	curl \
+	&& apt-get autoremove -y \
+	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
 USER $APP_UID
