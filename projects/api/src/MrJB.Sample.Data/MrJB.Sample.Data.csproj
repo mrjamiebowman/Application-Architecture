@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MrJB.Sample.Domain\MrJB.Sample.Domain.csproj" />
+    <ProjectReference Include="..\MrJB.Sample.ServiceDefaults\MrJB.Sample.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

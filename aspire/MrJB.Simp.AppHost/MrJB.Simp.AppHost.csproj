@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\projects\api\MrJB.API.Sample\MrJB.API.Sample.csproj" />
+    <ProjectReference Include="..\..\projects\api\src\MrJB.API.Sample\MrJB.API.Sample.csproj" />
   </ItemGroup>
 
 </Project>
