@@ -1,6 +1,7 @@
 using MrJB.API.Sample;
 using MrJB.Sample.Data;
 using MrJB.Sample.Domain.Configuration;
+using Scalar.AspNetCore;
 using TerribleSettingsAuditor;
 
 const string ProjectName = "MrJB.API.Sample";
@@ -34,6 +35,9 @@ builder.Configuration.AddJsonOverrides(builder.Environment);
 /************************************/
 
 // configuration
+ApplicationConfiguration applicationConfiguration = new ApplicationConfiguration();
+builder.Configuration.GetSection(ApplicationConfiguration.Position).Bind(applicationConfiguration);
+
 builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection(ApplicationConfiguration.Position));
 
 // data layer
@@ -59,10 +63,13 @@ var app = builder.Build();
 // tsa: runs terrible settings auditor
 await app.UseTerribleSettingsAuditorAsync(args);
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// openapi + scalar: /openapi/v1.json and /scalar, toggled by Application:ShowApiReference
+if (app.Environment.IsDevelopment() == true || 
+    app.Environment.IsEnvironment("Local") || 
+    applicationConfiguration.ShowOpenApiDocs == true
+) {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

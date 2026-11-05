@@ -2,6 +2,8 @@
   "profiles": {
     "DEV": {
       "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Scalar",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local",
         "APP_CONFIG_PREFIX": "DEV"
@@ -11,6 +13,8 @@
     },
     "TEST": {
       "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Scalar",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local",
         "APP_CONFIG_PREFIX": "TEST"
@@ -20,6 +24,8 @@
     },
     "QA": {
       "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Scalar",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local",
         "APP_CONFIG_PREFIX": "QA"
@@ -29,6 +35,8 @@
     },
     "UAT": {
       "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Scalar",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local",
         "APP_CONFIG_PREFIX": "UAT"
@@ -38,6 +46,8 @@
     },
     "PROD": {
       "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Scalar",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local",
         "APP_CONFIG_PREFIX": "PROD"
