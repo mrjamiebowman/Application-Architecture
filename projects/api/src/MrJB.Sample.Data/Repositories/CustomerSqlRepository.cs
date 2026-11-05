@@ -11,7 +11,7 @@ public class CustomerSqlRepository : BaseSqlRepository, ICustomerRepository
 
     }
 
-    public Task<CustomerEntity> GetCustomerByIdAsync(string customerId)
+    public Task<CustomerEntity?> GetCustomerByIdAsync(string customerId)
     {
         throw new NotImplementedException();
     }
