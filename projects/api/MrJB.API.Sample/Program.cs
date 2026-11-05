@@ -1,4 +1,5 @@
 using MrJB.API.Sample;
+using MrJB.Sample.Data;
 using MrJB.Sample.Domain.Configuration;
 using TerribleSettingsAuditor;
 
@@ -34,6 +35,9 @@ builder.Configuration.AddJsonOverrides(builder.Environment);
 
 // configuration
 builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection(ApplicationConfiguration.Position));
+
+// data layer
+builder.ConfigureDataLayer();
 
 builder.Services.AddControllers();
 
