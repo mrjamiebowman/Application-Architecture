@@ -1,6 +1,6 @@
 ﻿using MrJB.Sample.Domain.Models;
 
-namespace MrJB.Sample.Data;
+namespace MrJB.Sample.Domain.Interfaces;
 
 public interface IDataService
 {

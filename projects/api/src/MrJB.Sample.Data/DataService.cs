@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using MrJB.Sample.Data.Repositories.Interfaces;
+using MrJB.Sample.Domain.Interfaces;
 using MrJB.Sample.Domain.Models;
 
 namespace MrJB.Sample.Data;

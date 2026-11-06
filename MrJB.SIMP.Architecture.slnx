@@ -14,6 +14,7 @@
     <Project Path="projects/api/src/MrJB.Sample.Application/MrJB.Sample.Application.csproj" />
     <Project Path="projects/api/src/MrJB.Sample.Data/MrJB.Sample.Data.csproj" />
     <Project Path="projects/api/src/MrJB.Sample.Domain/MrJB.Sample.Domain.csproj" />
+    <Project Path="projects/api/src/MrJB.Sample.Infrastructure/MrJB.Sample.Infrastructure.csproj" Id="c6d229b2-c4b8-4af2-9de7-1112af418a95" />
     <Project Path="projects/api/src/MrJB.Sample.ServiceDefaults/MrJB.Sample.ServiceDefaults.csproj" />
   </Folder>
   <Folder Name="/projects/messaging/" />

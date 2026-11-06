@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using MrJB.Sample.Data.Repositories;
 using MrJB.Sample.Data.Repositories.Interfaces;
 using MrJB.Sample.Domain.Configuration;
+using MrJB.Sample.Domain.Interfaces;
 
 namespace MrJB.Sample.Data;
 
