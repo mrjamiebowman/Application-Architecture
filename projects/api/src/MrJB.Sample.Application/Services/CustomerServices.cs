@@ -1,4 +1,4 @@
-﻿using MrJB.Sample.Domain.Interfaces;
+﻿using MrJB.Sample.Domain.Interfaces.App;
 using MrJB.Sample.Domain.Models;
 
 namespace MrJB.Sample.Application.Services;

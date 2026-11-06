@@ -1,6 +1,6 @@
 ﻿namespace MrJB.Sample.Infrastructure;
 
-public class Class1
+public class Builder
 {
 
 }

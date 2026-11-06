@@ -1,6 +1,6 @@
 ﻿using MrJB.Sample.Domain.Models;
 
-namespace MrJB.Sample.Domain.Interfaces;
+namespace MrJB.Sample.Domain.Interfaces.App;
 
 public interface ICustomerServices
 {

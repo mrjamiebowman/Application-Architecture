@@ -14,4 +14,8 @@
     <ProjectReference Include="..\..\..\nuget\src\MrJB.Packages.Abstractions\MrJB.Packages.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\Data\" />
+  </ItemGroup>
+
 </Project>
