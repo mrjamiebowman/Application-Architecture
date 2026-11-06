@@ -38,7 +38,8 @@ public sealed partial class CustomerSqlRepository(
                 commandType: CommandType.StoredProcedure,
                 cancellationToken: cancellationToken);
 
-            return await connection.QuerySingleOrDefaultAsync<CustomerEntity>(command);
+            var data = await connection.QuerySingleOrDefaultAsync<CustomerEntity>(command);
+            return data;
         }
         catch (Exception ex)
         {
