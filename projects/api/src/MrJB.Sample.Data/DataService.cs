@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MrJB.Sample.Data.Mappers;
 using MrJB.Sample.Data.Repositories.Interfaces;
 using MrJB.Sample.Domain.Interfaces;
 using MrJB.Sample.Domain.Models;
@@ -13,14 +14,12 @@ public sealed class DataService(ILogger<DataService> logger, ICustomerRepository
     // repositories
     private ICustomerRepository CustomerRepository { get; } = customerRepository;
 
-    public async Task<Customer?> GetCustomerByIdAsync(string customerId)
+    public async Task<Customer?> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken = default)
     {
-        var data = await CustomerRepository.GetCustomerByIdAsync(customerId);
+        var entity = await CustomerRepository.GetCustomerByIdAsync(customerId, cancellationToken);
 
         // map to domain model
-        Customer? model = null;
-
-        return model;
+        return entity?.ToModel();
     }
 
     // save

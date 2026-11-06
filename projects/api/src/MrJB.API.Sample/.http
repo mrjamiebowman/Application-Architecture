@@ -5,7 +5,13 @@ Accept: application/json
 
 ###
 
-GET {{MrJB.API.Sample_HostAddress}}/weatherforecast/
+GET {{MrJB.API.Sample_HostAddress}}/api/customers/1
+Accept: application/json
+
+###
+
+# 404 problem details
+GET {{MrJB.API.Sample_HostAddress}}/api/customers/999999
 Accept: application/json
 
 ###

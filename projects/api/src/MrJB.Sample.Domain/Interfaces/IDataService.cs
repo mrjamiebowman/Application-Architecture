@@ -4,5 +4,5 @@ namespace MrJB.Sample.Domain.Interfaces;
 
 public interface IDataService
 {
-    Task<Customer?> GetCustomerByIdAsync(string customerId);
+    Task<Customer?> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken = default);
 }

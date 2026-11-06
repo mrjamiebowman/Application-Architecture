@@ -4,5 +4,5 @@ namespace MrJB.Sample.Data.Repositories.Interfaces;
 
 public interface ICustomerRepository
 {
-    Task<CustomerEntity?> GetCustomerByIdAsync(string customerId);
+    Task<CustomerEntity?> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken = default);
 }

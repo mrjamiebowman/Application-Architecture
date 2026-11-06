@@ -9,9 +9,9 @@ public class DatabaseConfiguration
     public const string Position = "Database";
 
     /// <summary>
-    /// Gets or sets the primary database connection string.
+    /// Gets or sets the Customers database connection string.
     /// </summary>
     [Required]
-    [LuggageItem(Description = "Primary Database Connection String", Secret = true, Expose = ExposeMethod.Padded, ShowLeft = 25)]
-    public string Primary { get; set; } = string.Empty;
+    [LuggageItem(Description = "Customers Database Connection String", Secret = true, Expose = ExposeMethod.Padded, ShowLeft = 25)]
+    public string Customers { get; set; } = string.Empty;
 }

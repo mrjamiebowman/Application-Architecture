@@ -1,5 +1,5 @@
 using MrJB.API.Sample;
-using MrJB.Sample.Data;
+using MrJB.Sample.Application;
 using MrJB.Sample.Domain.Configuration;
 using Scalar.AspNetCore;
 using TerribleSettingsAuditor;
@@ -40,10 +40,16 @@ builder.Configuration.GetSection(ApplicationConfiguration.Position).Bind(applica
 
 builder.Services.Configure<ApplicationConfiguration>(builder.Configuration.GetSection(ApplicationConfiguration.Position));
 
-// data layer
-builder.ConfigureDataLayer();
+// aspire service defaults: opentelemetry (traces, metrics, logs), health checks, service discovery, resilience
+builder.AddServiceDefaults();
+
+// application layer (registers the data layer too)
+builder.ConfigureApplicationLayer();
 
 builder.Services.AddControllers();
+
+// unhandled exceptions return RFC 7807 problem details instead of an empty 500
+builder.Services.AddProblemDetails();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -72,9 +78,13 @@ if (app.Environment.IsDevelopment() == true ||
     app.MapScalarApiReference();
 }
 
+app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+// /health and /alive (development only)
+app.MapDefaultEndpoints();
 
 try
 {
