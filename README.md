@@ -1,4 +1,4 @@
-# Simple Implementation Minimalistic Patterns (SIMP) Architecture
+# Application Architecture
 
 "The architecture for developers who value simplicity over ceremony."   
 
