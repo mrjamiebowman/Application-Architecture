@@ -5,7 +5,7 @@
     <File Path="README.md" />
   </Folder>
   <Folder Name="/aspire/">
-    <Project Path="aspire/MrJB.Simp.AppHost/MrJB.Architecture.AppHost/MrJB.Architecture.AppHost.csproj" Id="eaf35cb0-ee67-4c2b-86e8-5699d7a64690" />
+    <Project Path="aspire/MrJB.AppArch.AppHost.csproj" />
   </Folder>
   <Folder Name="/projects/" />
   <Folder Name="/projects/api/">

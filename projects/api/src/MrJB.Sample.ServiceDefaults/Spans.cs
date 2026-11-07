@@ -1,14 +1,27 @@
 ﻿namespace MrJB.Sample.ServiceDefaults;
 
 /// <summary>
-/// Custom span names, started from <see cref="OTel.ActivitySource"/>.
-/// The HTTP server span and the SQL client span come from instrumentation and aren't listed here.
+///  Custom span names
 /// </summary>
 public static class Spans
 {
-    // application layer
-    public const string CustomerServicesGetById = "CustomerServices.GetCustomerById";
+    public const string CustomerId = "CustomerId";
 
-    // data layer
-    public const string CustomerRepositoryGetById = "CustomerSqlRepository.GetCustomerById";
+    public const string Result = "Result";
+
+    public const string Outcome = "Outcome";
+
+    public const string DbSystem = "Db.System.Name";
+
+    public const string DbStoredProcedure = "Db.StoredProcedure.Name";
+
+    public static class Values
+    {
+        public const string Found = "found";
+        public const string NotFound = "not_found";
+        public const string Error = "error";
+        public const string Success = "success";
+
+        public const string SqlServer = "microsoft.sql_server";
+    }
 }

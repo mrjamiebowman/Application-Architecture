@@ -28,7 +28,7 @@ public class CustomersController(ILogger<CustomersController> logger, IAppServic
     public async Task<ActionResult<Customer>> GetCustomerById(int customerId, CancellationToken cancellationToken)
     {
         var activity = OTel.ActivitySource.StartActivity($"{nameof(CustomersController)}.{nameof(GetCustomerById)}");
-        activity?.SetTag(OTel.Tags.CustomerId, customerId);
+        activity?.SetTag(Spans.CustomerId, customerId);
 
         if (customerId <= 0)
         {

@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/.Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/aspire/">
+    <Project Path="aspire/MrJB.Simp.AppHost/MrJB.Simp.AppHost.csproj" Id="2f1a0809-51d3-453b-b20a-ffd3fba39940" />
+  </Folder>
+  <Folder Name="/projects/" />
+  <Folder Name="/projects/api/">
+    <Project Path="projects/api/src/MrJB.API.Sample/MrJB.API.Sample.csproj" />
+  </Folder>
+  <Folder Name="/projects/api/libs/">
+    <Project Path="projects/api/src/MrJB.Sample.Application/MrJB.Sample.Application.csproj" />
+    <Project Path="projects/api/src/MrJB.Sample.Data/MrJB.Sample.Data.csproj" />
+    <Project Path="projects/api/src/MrJB.Sample.Domain/MrJB.Sample.Domain.csproj" />
+    <Project Path="projects/api/src/MrJB.Sample.Infrastructure/MrJB.Sample.Infrastructure.csproj" Id="c6d229b2-c4b8-4af2-9de7-1112af418a95" />
+    <Project Path="projects/api/src/MrJB.Sample.ServiceDefaults/MrJB.Sample.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/projects/messaging/" />
+  <Folder Name="/projects/messaging/libs/" />
+  <Folder Name="/projects/nuget/">
+    <Project Path="projects/nuget/src/MrJB.Packages.Abstractions/MrJB.Packages.Abstractions.csproj" Id="48fb3aa7-5277-4c55-9f9e-32463bfe609c" />
+  </Folder>
+</Solution>

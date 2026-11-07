@@ -20,13 +20,13 @@ public sealed partial class CustomerSqlRepository(
         const string storedProcedure = StoredProcedures.CustomerGetById;
 
         // parent span for the call; the SqlClient instrumentation adds the client span beneath it
-        using var activity = OTel.ActivitySource.StartActivity(Spans.CustomerRepositoryGetById);
-        activity?.SetTag(OTel.Tags.CustomerId, customerId);
-        activity?.SetTag(OTel.Tags.DbSystem, OTel.Values.SqlServer);
-        activity?.SetTag(OTel.Tags.DbStoredProcedure, storedProcedure);
+        using var activity = OTel.ActivitySource.StartActivity($"{nameof(CustomerSqlRepository)}.{nameof(GetCustomerByIdAsync)}");
+        activity?.SetTag(Spans.CustomerId, customerId);
+        activity?.SetTag(Spans.DbSystem, Spans.Values.SqlServer);
+        activity?.SetTag(Spans.DbStoredProcedure, storedProcedure);
 
         var started = Stopwatch.GetTimestamp();
-        var outcome = OTel.Values.Success;
+        var outcome = Spans.Values.Success;
 
         try
         {
@@ -43,7 +43,7 @@ public sealed partial class CustomerSqlRepository(
         }
         catch (Exception ex)
         {
-            outcome = OTel.Values.Error;
+            outcome = Spans.Values.Error;
             activity?.AddException(ex);
             activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
             LogQueryFailed(logger, ex, storedProcedure, customerId);

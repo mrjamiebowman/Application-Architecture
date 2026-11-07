@@ -17,27 +17,4 @@ public static class OTel
     public static readonly ActivitySource ActivitySource = new(ActivitySourceName);
 
     /// <summary>Tag keys. Database keys follow the OpenTelemetry semantic conventions.</summary>
-    public static class Tags
-    {
-        public const string CustomerId = "customer.id";
-
-        /// <summary>found | not_found | error</summary>
-        public const string LookupResult = "customer.lookup.result";
-
-        /// <summary>success | error</summary>
-        public const string Outcome = "outcome";
-
-        public const string DbSystem = "db.system.name";
-        public const string DbStoredProcedure = "db.stored_procedure.name";
-    }
-
-    public static class Values
-    {
-        public const string Found = "found";
-        public const string NotFound = "not_found";
-        public const string Error = "error";
-        public const string Success = "success";
-
-        public const string SqlServer = "microsoft.sql_server";
-    }
 }

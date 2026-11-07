@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MrJB.Sample.Domain.Interfaces;
 using MrJB.Sample.Domain.Interfaces.App;
 using MrJB.Sample.Domain.Models;
 using MrJB.Sample.ServiceDefaults;
+using System.Diagnostics;
 
 namespace MrJB.Sample.Application.Services;
 
@@ -14,8 +14,8 @@ public sealed partial class CustomerServices(
 {
     public async Task<Customer?> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken = default)
     {
-        using var activity = OTel.ActivitySource.StartActivity(Spans.CustomerServicesGetById);
-        activity?.SetTag(OTel.Tags.CustomerId, customerId);
+        using var activity = OTel.ActivitySource.StartActivity($"{nameof(CustomerServices)}.{nameof(GetCustomerByIdAsync)}");
+        activity?.SetTag(Spans.CustomerId, customerId);
 
         LogGettingCustomer(logger, customerId);
 
@@ -23,8 +23,8 @@ public sealed partial class CustomerServices(
         {
             var customer = await dataService.GetCustomerByIdAsync(customerId, cancellationToken);
 
-            var result = customer is null ? OTel.Values.NotFound : OTel.Values.Found;
-            activity?.SetTag(OTel.Tags.LookupResult, result);
+            var result = customer is null ? Spans.Values.NotFound : Spans.Values.Found;
+            activity?.SetTag(Spans.Result, result);
             metrics.CustomerLookup(result);
 
             if (customer is null)
@@ -37,9 +37,9 @@ public sealed partial class CustomerServices(
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
             // the repository already logged the failure with its exception; record it on this span and count it
-            activity?.SetTag(OTel.Tags.LookupResult, OTel.Values.Error);
+            activity?.SetTag(Spans.Result, Spans.Values.Error);
             activity?.SetStatus(ActivityStatusCode.Error, ex.Message);
-            metrics.CustomerLookup(OTel.Values.Error);
+            metrics.CustomerLookup(Spans.Values.Error);
             throw;
         }
     }

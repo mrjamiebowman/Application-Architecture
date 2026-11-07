@@ -28,15 +28,15 @@ public sealed class SampleMetrics
     }
 
     public void CustomerLookup(string result) =>
-        _customerLookups.Add(1, new KeyValuePair<string, object?>(OTel.Tags.LookupResult, result));
+        _customerLookups.Add(1, new KeyValuePair<string, object?>(Spans.Result, result));
 
     public void DbQueryDuration(TimeSpan elapsed, string storedProcedure, string outcome)
     {
         var tags = new TagList
         {
-            { OTel.Tags.DbSystem, OTel.Values.SqlServer },
-            { OTel.Tags.DbStoredProcedure, storedProcedure },
-            { OTel.Tags.Outcome, outcome },
+            { Spans.DbSystem, Spans.Values.SqlServer },
+            { Spans.DbStoredProcedure, storedProcedure },
+            { Spans.Outcome, outcome },
         };
 
         _dbQueryDuration.Record(elapsed.TotalSeconds, tags);

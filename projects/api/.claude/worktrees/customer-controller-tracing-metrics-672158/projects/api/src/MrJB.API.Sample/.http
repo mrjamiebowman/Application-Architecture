@@ -1,0 +1,17 @@
+@MrJB.API.Sample_HostAddress = http://localhost:5209
+
+GET {{MrJB.API.Sample_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{MrJB.API.Sample_HostAddress}}/api/customer/1
+Accept: application/json
+
+###
+
+# 404 problem details
+GET {{MrJB.API.Sample_HostAddress}}/api/customer/999999
+Accept: application/json
+
+###

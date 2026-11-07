@@ -7,9 +7,8 @@
     <AspireUseCliBundle>true</AspireUseCliBundle>
     <UserSecretsId>bf04fc18-cec0-4afd-bdc8-ef92f871a551</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\..\projects\api\src\MrJB.API.Sample\MrJB.API.Sample.csproj" />
+    <ProjectReference Include="..\projects\api\src\MrJB.API.Sample\MrJB.API.Sample.csproj" />
   </ItemGroup>
 
 </Project>
