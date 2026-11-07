@@ -1,6 +1,7 @@
 using MrJB.API.Sample;
 using MrJB.Sample.Application;
 using MrJB.Sample.Domain.Configuration;
+using MrJB.Sample.Infrastructure;
 using Scalar.AspNetCore;
 using TerribleSettingsAuditor;
 
@@ -45,6 +46,9 @@ builder.AddServiceDefaults();
 
 // application layer (registers the data layer too)
 builder.ConfigureApplicationLayer();
+
+// infrastructure layer: azure key vault + feature flags (IFeatureService); flags are off when KeyVault:Uri isn't set
+builder.ConfigureInfrastructureLayer();
 
 builder.Services.AddControllers();
 
