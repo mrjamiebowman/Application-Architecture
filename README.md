@@ -1,8 +1,6 @@
 # Application Architecture
-
 "The architecture for developers who value simplicity over ceremony."   
 
-The distinction is that SIMP Architecture isn't anti-abstraction or anti-architecture. It's anti-complexity. You can embrace abstractions, dependency injection, design patterns, and reusable components without adopting rigid architectural rules. This is great for microservice architecture and not large monoliths.   
 
 ## Philosophy
 - Abstractions are good. Use them whenever they make code easier to understand, maintain, test, or extend.
@@ -10,7 +8,6 @@ The distinction is that SIMP Architecture isn't anti-abstraction or anti-archite
 - Architecture should be flexible. Organize projects and dependencies according to actual application requirements.
 - Simplicity is intentional. Don't mistake complexity for sophistication.
 - Consistency beats cleverness. Predictable code is easier to maintain than unnecessarily elaborate unique designs.
-- Git Shit Done!
 
 ## Project Setup
 This explains how we set up project.   
@@ -25,7 +22,7 @@ Consider migrating from legacy Entity Framework to modern Entity Framework Core.
 
 These are substantial architectural changes, and they're realistic scenarios that applications may encounter over time.
 
-**This is why SIMP Architecture places particular emphasis on decoupling the data access layer and persistence entities from the application layer.** By establishing clear boundaries between application logic, data access implementations, and database-specific entities, we make it easier to replace or modernize persistence technologies without introducing widespread changes throughout the application.
+**This is why simple architecture places particular emphasis on decoupling the data access layer and persistence entities from the application layer.** By establishing clear boundaries between application logic, data access implementations, and database-specific entities, we make it easier to replace or modernize persistence technologies without introducing widespread changes throughout the application.
 
 The goal isn't to abstract everything or introduce unnecessary complexity. It's to apply thoughtful abstractions where they provide the greatest long-term value.
 
