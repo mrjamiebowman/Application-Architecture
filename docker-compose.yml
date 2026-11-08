@@ -1,0 +1,37 @@
+# Local infrastructure for AppArch.
+#   docker compose up -d --build     start (rebuild after changing .docker/ or the data scripts)
+#   docker compose down              stop (data is kept in the mssql-data volume)
+#   docker compose down -v           stop and delete the database
+#
+# Connection string (from the host):
+#   Server=localhost,1433;Database=AppArch;User Id=sa;Password=<MSSQL_SA_PASSWORD>;TrustServerCertificate=True
+#   (use the MSSQL_PORT value instead of 1433 if you override it)
+name: apparch
+
+services:
+  mssql:
+    build:
+      context: .docker/mssql
+      additional_contexts:
+        scripts: projects/api/src/MrJB.Sample.Data/Scripts
+    image: apparch-mssql:2025
+    container_name: apparch-mssql
+    environment:
+      # local development only; override with MSSQL_SA_PASSWORD in your shell or a .env file
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-AppArch!Dev2025}
+      MSSQL_DATABASE: AppArch
+    ports:
+      # set MSSQL_PORT when 1433 is taken on the host (e.g. another SQL Server container)
+      - "${MSSQL_PORT:-1433}:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+    healthcheck:
+      # healthy once entrypoint.sh has created the database and run every init script
+      test: ["CMD-SHELL", "test -f /tmp/mssql-init-complete"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 30s
+
+volumes:
+  mssql-data:
