@@ -20,6 +20,7 @@
     <Project Path="projects/api/src/MrJB.Sample.ServiceDefaults/MrJB.Sample.ServiceDefaults.csproj" />
   </Folder>
   <Folder Name="/projects/api/test/">
+    <Project Path="projects/api/test/MrJB.API.Tests.Data/MrJB.API.Tests.Data.csproj" Id="d3a09c69-822e-4cda-9590-b0e70aa97348" />
     <Project Path="projects/api/test/MrJB.API.Tests.Developer/MrJB.API.Tests.Developer.csproj" Id="b562b365-2740-4b3c-90b9-376fb85c3039" />
     <Project Path="projects/api/test/MrJB.API.Tests.Integration/MrJB.API.Tests.Integration.csproj" Id="80cf951c-75d9-483f-bf59-430796dc2021" />
     <Project Path="projects/api/test/MrJB.API.Tests.Unit/MrJB.API.Tests.Unit.csproj" Id="c058c203-e953-4240-be2b-d853928ddb11" />
