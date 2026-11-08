@@ -1,4 +1,4 @@
--- Customers table read by CustomerSqlRepository. Run against the database in Database:Primary.
+-- Customers table read by CustomerSqlRepository. Run against the database in Database:Customers.
 IF OBJECT_ID(N'dbo.Customers', N'U') IS NULL
 BEGIN
     CREATE TABLE dbo.Customers

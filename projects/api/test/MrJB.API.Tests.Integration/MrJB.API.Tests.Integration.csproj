@@ -11,12 +11,21 @@
 
   <ItemGroup>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="IfDifferent" />
+    <!-- the API loads appsettings.{Environment}.json from AppContext.BaseDirectory (this project's bin) -->
+    <Content Include="appsettings.IntegrationTests.json" CopyToOutputDirectory="IfDifferent" />
+    <!-- schema scripts the fixture applies to the database before the tests run -->
+    <Content Include="..\..\src\MrJB.Sample.Data\Scripts\*.sql" Link="Scripts\%(Filename)%(Extension)" CopyToOutputDirectory="IfDifferent" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeItEasy" Version="9.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="11.0.0-rc.3.26522.148" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
     <PackageReference Include="Shouldly" Version="4.3.0" />
     <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MrJB.API.Sample\MrJB.API.Sample.csproj" />
   </ItemGroup>
 
   <ItemGroup>
