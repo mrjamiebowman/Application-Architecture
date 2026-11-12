@@ -1,4 +1,4 @@
-# Simple, Action-Oriented, N-Layer, Essential (SANE)
+# SANE Architecture Template - Simple, Action-Oriented, N-Layer, Essential (SANE)
 "The architecture for developers who value simplicity over ceremony."   
 
 ## Best Fit
