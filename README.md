@@ -1,7 +1,7 @@
 # Architecture Template (Microservices / N-Layer)
 "The architecture for developers who value simplicity over ceremony."   
 
-## Best Fit
+### Best Fit
 This architecture is best fit for microservices that need a very simple linear flow.   
 
 ## Philosophy
