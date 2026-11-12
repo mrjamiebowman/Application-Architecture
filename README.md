@@ -1,6 +1,9 @@
 # Architecture Template (Microservices / N-Layer)
 "The architecture for developers who value simplicity over ceremony."   
 
+## Work In Progress (WIP)
+I'm currently building this out as of 11/11/2026.   
+
 ### Best Fit
 This architecture is best fit for microservices such as APIs / Messaging (consumers) that need a very simple linear flow.   
 
