@@ -1,4 +1,4 @@
-# SANE Architecture Template - Simple, Action-Oriented, N-Layer, Essential (SANE)
+# Architecture Template (Microservices / N-Layer)
 "The architecture for developers who value simplicity over ceremony."   
 
 ## Best Fit
