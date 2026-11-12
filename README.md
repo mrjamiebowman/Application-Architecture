@@ -2,7 +2,7 @@
 "The architecture for developers who value simplicity over ceremony."   
 
 ### Best Fit
-This architecture is best fit for microservices that need a very simple linear flow.   
+This architecture is best fit for microservices such as APIs / Messaging (consumers) that need a very simple linear flow.   
 
 ## Philosophy
 - Abstractions are good. Use them whenever they make code easier to understand, maintain, test, or extend.
